@@ -1,7 +1,6 @@
 package xyz.pepefab.ultrapixelmon.commands;
 
 import com.google.common.collect.Lists;
-import com.sun.org.apache.xerces.internal.xs.StringList;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -9,27 +8,20 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.HoverEvent;
-import xyz.pepefab.ultrapixelmon.Config.Config;
 import xyz.pepefab.ultrapixelmon.Database.DatabaseHandler;
 import xyz.pepefab.ultrapixelmon.utils.ChatUtils;
 import xyz.pepefab.ultrapixelmon.utils.PermissionsUtils;
 
 import javax.annotation.Nullable;
-import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class LastLegendCommand extends CommandBase {
 
     private final List<String> aliases = Lists.newArrayList(new String[]{"ll"});
-    private long elapsedDays;
-    private long elapsedHours;
-    private long elapsedMinutes;
 
     @Override
     public String getName() {

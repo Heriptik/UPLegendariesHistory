@@ -24,8 +24,8 @@ public class LegendaryCapture {
         if(!legendary.isLegendary()) return;
         if(Arrays.toString(Config.legendaryBlacklist).contains(legendary.getDisplayName())) return;
 
-        Date date = new Date(System.currentTimeMillis());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy à HH:mm");
+        Date date = new Date();
 
         final String req = String.format("INSERT INTO Legendary (Player,Pokemon,HeureSpawnPokemon,Talent,IVS,Nature) VALUES ('%s', '%s', '%s', '%s', %s, '%s');",
                         player.getName(),
