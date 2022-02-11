@@ -11,6 +11,7 @@ import xyz.pepefab.ultrapixelmon.Main;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class LegendaryCapture {
 
@@ -21,8 +22,10 @@ public class LegendaryCapture {
         EntityPlayer player = (EntityPlayer) event.player;
         Pokemon legendary = (Pokemon) event.getPokemon().getPokemonData();
 
+        List<String> list = Arrays.asList(Config.legendaryBlacklist);
+
         if(!legendary.isLegendary()) return;
-        if(Arrays.toString(Config.legendaryBlacklist).contains(legendary.getDisplayName())) return;
+        if(list.contains(legendary.getDisplayName())) return;
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy à HH:mm");
         Date date = new Date();
